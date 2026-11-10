@@ -44,6 +44,24 @@ export default function UserGuideTab({ currentUser, onSelectTab }) {
             >
               <ExternalLink size={12} /> Interactive Swagger API Docs (:8000/docs)
             </a>
+            <a
+              href="https://github.com/miarasel23/careguide-back-end"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary btn-sm"
+              style={{ textDecoration: "none" }}
+            >
+              <Code2 size={12} /> Backend GitHub Repo
+            </a>
+            <a
+              href="https://github.com/miarasel23/careguide-font-end"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary btn-sm"
+              style={{ textDecoration: "none" }}
+            >
+              <Code2 size={12} /> Frontend GitHub Repo
+            </a>
             <button
               onClick={() => onSelectTab("indexing")}
               className="btn btn-secondary btn-sm"
@@ -377,12 +395,18 @@ export default function UserGuideTab({ currentUser, onSelectTab }) {
                 Phone: <strong>01997709990</strong> &bull; Email: <strong>eng.rasel1994@gmail.com</strong>
               </div>
             </div>
-            <div style={{ display: "flex", gap: 8 }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <a href="tel:01997709990" className="btn btn-secondary btn-sm" style={{ textDecoration: "none" }}>
                 Call: 01997709990
               </a>
               <a href="mailto:eng.rasel1994@gmail.com" className="btn btn-dark btn-sm" style={{ textDecoration: "none" }}>
                 Email: eng.rasel1994@gmail.com
+              </a>
+              <a href="https://github.com/miarasel23/careguide-back-end" target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm" style={{ textDecoration: "none" }}>
+                <ExternalLink size={11} /> Backend Repo
+              </a>
+              <a href="https://github.com/miarasel23/careguide-font-end" target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm" style={{ textDecoration: "none" }}>
+                <ExternalLink size={11} /> Frontend Repo
               </a>
             </div>
           </div>

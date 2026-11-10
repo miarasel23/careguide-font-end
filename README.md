@@ -63,3 +63,4 @@ npm run dev -- --host 0.0.0.0 --port 3000
 npm run build
 ```
 Generates production-optimized static assets into `dist/`. The FastAPI backend also directly serves this built folder at `http://localhost:8000/`.
+
