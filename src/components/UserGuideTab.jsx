@@ -31,7 +31,7 @@ export default function UserGuideTab({ currentUser, onSelectTab }) {
         <div className="card-body">
           <div className="callout">
             This platform was built to satisfy all constraints of the <strong>Backend Technical Interview Task</strong>:
-            Python FastAPI adhering to the <strong>Care Guide Interview Architecture</strong>, <strong>Strict MongoDB ESR Indexing</strong> (Zero Unnecessary Indexes), and <strong>MongoDB Aggregation Pipelines</strong> (Scenarios 1 &amp; 2), paired with a responsive <strong>React.js (AdminLTE 3 + Tailwind CSS)</strong> dashboard.
+            Node.js (Express.js &amp; Mongoose) adhering to the <strong>Care Guide Interview Architecture</strong>, <strong>Strict MongoDB ESR Indexing</strong> (Zero Unnecessary Indexes via <code>schema.index()</code>), and <strong>MongoDB Aggregation Pipelines</strong> (Scenarios 1 &amp; 2), paired with a responsive <strong>React.js (AdminLTE 3 + Tailwind CSS)</strong> dashboard.
           </div>
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 14 }}>
@@ -339,7 +339,7 @@ export default function UserGuideTab({ currentUser, onSelectTab }) {
             <span>Care Guide Interview Architecture Structure</span>
           </h4>
           <div className="card-tools">
-            <span className="badge badge-dark">FastAPI Python</span>
+            <span className="badge badge-dark">Node.js Express &bull; Mongoose</span>
           </div>
         </div>
 
@@ -348,25 +348,25 @@ export default function UserGuideTab({ currentUser, onSelectTab }) {
             <div style={{ background: "#fafafa", border: "1px solid #dee2e6", padding: 12, borderRadius: 4 }}>
               <strong>core/</strong>
               <p style={{ fontSize: "0.775rem", color: "var(--admin-text-muted)", marginTop: 4 }}>
-                <code>config.py</code> (Pydantic v2 Settings) and <code>database.py</code> (PyMongo client with in-memory Mongomock fallback &amp; index initializer).
+                <code>config.js</code> (Environment Settings) and <code>database.js</code> (Mongoose connection with in-memory MongoMemoryServer fallback).
               </p>
             </div>
             <div style={{ background: "#fafafa", border: "1px solid #dee2e6", padding: 12, borderRadius: 4 }}>
               <strong>modules/apiResponse/</strong>
               <p style={{ fontSize: "0.775rem", color: "var(--admin-text-muted)", marginTop: 4 }}>
-                Care Guide Interview unified response envelope: <code>custom_response()</code>, <code>ApiResponseCode</code>, and global exception handlers.
+                Unified response envelope: <code>customResponse()</code>, <code>ApiResponseCode</code>, and global error handlers.
               </p>
             </div>
             <div style={{ background: "#fafafa", border: "1px solid #dee2e6", padding: 12, borderRadius: 4 }}>
               <strong>modules/{'{domain}'}/</strong>
               <p style={{ fontSize: "0.775rem", color: "var(--admin-text-muted)", marginTop: 4 }}>
-                Modular domain segregation: <code>models.py</code> (indexes &amp; schema), <code>schemas.py</code>, <code>repository.py</code>, and <code>routers.py</code>.
+                Modular domain segregation: <code>models/</code> (with explicit <code>schema.index()</code>), <code>schemas/</code>, <code>repository/</code>, and <code>routers/</code>.
               </p>
             </div>
             <div style={{ background: "#fafafa", border: "1px solid #dee2e6", padding: 12, borderRadius: 4 }}>
               <strong>services/ &amp; seeds/</strong>
               <p style={{ fontSize: "0.775rem", color: "var(--admin-text-muted)", marginTop: 4 }}>
-                CORS policy, JWT decoding with RBAC middlewares (<code>require_admin</code>), native Bcrypt hashing, and seeder suite.
+                CORS policy, JWT decoding with RBAC middlewares (<code>auth.middleware.js</code>, <code>role.middleware.js</code>), native Bcrypt hashing, and seeder suite.
               </p>
             </div>
           </div>
