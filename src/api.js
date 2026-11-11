@@ -56,6 +56,7 @@ async function request(endpoint, options = {}) {
   const token = getStoredToken();
   const headers = {
     "Content-Type": "application/json",
+    "X-Pinggy-No-Screen": "true",
     ...(options.headers || {}),
   };
 
