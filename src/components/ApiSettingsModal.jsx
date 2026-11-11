@@ -100,7 +100,7 @@ export default function ApiSettingsModal({ isOpen, onClose }) {
               {isTesting ? "Testing..." : "Test Connection"}
             </button>
             <button
-              onClick={() => setCurrentUrl("https://automation-databases-viruses-denied.trycloudflare.com/api/v1")}
+              onClick={() => setCurrentUrl("https://english-examined-leslie-vendor.trycloudflare.com/api/v1")}
               className="btn btn-secondary btn-sm"
               type="button"
             >

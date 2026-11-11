@@ -8,7 +8,7 @@ const getBaseUrl = () => {
   }
   if (typeof window !== "undefined") {
     if (window.location.hostname.includes("github.io")) {
-      return "https://automation-databases-viruses-denied.trycloudflare.com/api/v1";
+      return "https://english-examined-leslie-vendor.trycloudflare.com/api/v1";
     }
     if (window.location.hostname.includes("onrender.com")) {
       return "https://careguide-back-end-node.onrender.com/api/v1";
