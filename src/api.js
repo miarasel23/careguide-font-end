@@ -8,7 +8,7 @@ const getBaseUrl = () => {
   }
   if (typeof window !== "undefined") {
     if (window.location.hostname.includes("github.io")) {
-      return "https://fagcf-103-77-60-150.run.pinggy-free.link/api/v1";
+      return "https://fagcf-103-77-60-145.run.pinggy-free.link/api/v1";
     }
     if (window.location.hostname.includes("onrender.com")) {
       return "https://careguide-back-end-node.onrender.com/api/v1";
