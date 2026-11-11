@@ -1,10 +1,17 @@
 const getBaseUrl = () => {
+  if (typeof window !== "undefined") {
+    const custom = localStorage.getItem("custom_api_url");
+    if (custom) return custom;
+  }
   if (import.meta.env.VITE_API_BASE_URL) {
     return import.meta.env.VITE_API_BASE_URL;
   }
   if (typeof window !== "undefined") {
+    if (window.location.hostname.includes("github.io")) {
+      return "https://igxvp-103-77-60-150.run.pinggy-free.link/api/v1";
+    }
     if (window.location.hostname.includes("onrender.com")) {
-      return "https://careguide-back-end.onrender.com/api/v1";
+      return "https://careguide-back-end-node.onrender.com/api/v1";
     }
     if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
       if (window.location.port === "3000") {
@@ -16,7 +23,14 @@ const getBaseUrl = () => {
   return "/api/v1";
 };
 
-const API_BASE_URL = getBaseUrl();
+export const getApiBaseUrl = getBaseUrl;
+export const setCustomApiUrl = (url) => {
+  if (url) {
+    localStorage.setItem("custom_api_url", url);
+  } else {
+    localStorage.removeItem("custom_api_url");
+  }
+};
 
 export const getStoredToken = () => localStorage.getItem("auth_token");
 export const setStoredToken = (token) => localStorage.setItem("auth_token", token);
@@ -49,7 +63,8 @@ async function request(endpoint, options = {}) {
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+  const baseUrl = getBaseUrl();
+  const response = await fetch(`${baseUrl}${endpoint}`, {
     ...options,
     headers,
   });
