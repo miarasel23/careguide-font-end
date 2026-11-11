@@ -1,8 +1,22 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ||
-  (typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? "http://localhost:8000/api/v1"
-    : "/api/v1");
+const getBaseUrl = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    return import.meta.env.VITE_API_BASE_URL;
+  }
+  if (typeof window !== "undefined") {
+    if (window.location.hostname.includes("onrender.com")) {
+      return "https://careguide-back-end.onrender.com/api/v1";
+    }
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+      if (window.location.port === "3000") {
+        return "/api/v1";
+      }
+      return "http://localhost:8000/api/v1";
+    }
+  }
+  return "/api/v1";
+};
+
+const API_BASE_URL = getBaseUrl();
 
 export const getStoredToken = () => localStorage.getItem("auth_token");
 export const setStoredToken = (token) => localStorage.setItem("auth_token", token);

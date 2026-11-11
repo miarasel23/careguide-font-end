@@ -1,10 +1,12 @@
 services:
-  - type: web
+  - type: static
     name: careguide-font-end
-    runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://careguide-back-end.onrender.com/api/v1
