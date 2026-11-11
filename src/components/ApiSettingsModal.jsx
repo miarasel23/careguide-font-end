@@ -100,11 +100,11 @@ export default function ApiSettingsModal({ isOpen, onClose }) {
               {isTesting ? "Testing..." : "Test Connection"}
             </button>
             <button
-              onClick={() => setCurrentUrl("https://fagcf-103-77-60-145.run.pinggy-free.link/api/v1")}
+              onClick={() => setCurrentUrl("https://automation-databases-viruses-denied.trycloudflare.com/api/v1")}
               className="btn btn-secondary btn-sm"
               type="button"
             >
-              Use Live Tunnel
+              Use Cloudflare Live Target
             </button>
             <button
               onClick={() => setCurrentUrl("http://localhost:8000/api/v1")}
